@@ -44,6 +44,12 @@ public class LoginPage {
 	public boolean isLogoExist() {
 		return eleUtil.isElementDisplayed(logo);
 	}
-
+	
+	public AccountsPage doLogin(String userName, String pwd) {
+			eleUtil.waitForElementVisible(username, AppConstants.DEFAULT_MEDIUM_TIME_OUT).sendKeys(userName);
+			eleUtil.doSendKeys(password, pwd);
+			eleUtil.doClick(loginBtn);			
+			return new AccountsPage(driver);		
+		}
 
 }

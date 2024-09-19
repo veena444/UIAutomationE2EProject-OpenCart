@@ -30,5 +30,10 @@ public class LoginPageTest extends BaseTest{
 		Assert.assertTrue(loginPage.isLogoExist());
 	}
 
+	@Test(priority=Integer.MAX_VALUE)
+	public void loginTest() {
+		accountsPage = loginPage.doLogin(prop.getProperty("username"), prop.getProperty("password"));
+		Assert.assertEquals(accountsPage.getAccountsPageTitle(), AppConstants.ACCOUNTS_PAGE_TITLE);
+	}
 
 }
