@@ -51,5 +51,10 @@ public class LoginPage {
 			eleUtil.doClick(loginBtn);			
 			return new AccountsPage(driver);		
 		}
+	
+	public RegisterPage navigateToRegisterPage() {
+		eleUtil.doClick(registerLink);
+		return new RegisterPage(driver);
+	}
 
 }

@@ -13,5 +13,8 @@ public class AppConstants {
 	public static final String LOGIN_PAGE_FRACTION_URL = "route=account/login";
 	public static final int ACCOUNTS_PAGE_HEADERS_COUNT=4;
 	public static final List<String> EXPECTED_ACC_PAGE_HEADERS_LIST = List.of("My Account","My Orders","My Affiliate Account","Newsletter");
+	
+	public static final String USER_REGISTER_SUCCESS_MESSG = "Your Account Has Been Created!";	
+	public static final String REGISTER_PAGE_TITLE = "Register Account";
 
 }
