@@ -49,5 +49,13 @@ public class AccountsPage {
 		}
 		return headersValueList;
 	}
+	
+	public ResultsPage doSearch(String searchKey) {
+		System.out.println("Search key ===> "+searchKey);
+		WebElement searchEle = eleUtil.waitForElementVisible(search, AppConstants.DEFAULT_SHORT_TIME_OUT);
+		eleUtil.doSendKeys(searchEle, searchKey);
+		eleUtil.doClick(searchIcon);
+		return new ResultsPage(driver);
+	}
 
 }

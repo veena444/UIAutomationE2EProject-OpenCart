@@ -10,6 +10,7 @@ import com.qa.opencart.factory.DriverFactory;
 import com.qa.opencart.pages.AccountsPage;
 import com.qa.opencart.pages.LoginPage;
 import com.qa.opencart.pages.RegisterPage;
+import com.qa.opencart.pages.ResultsPage;
 
 public class BaseTest {
 	
@@ -20,6 +21,7 @@ public class BaseTest {
 	protected LoginPage loginPage;
 	protected AccountsPage accountsPage;
 	protected RegisterPage registerPage;
+	protected ResultsPage resultsPage;
 	
 	@BeforeTest
 	

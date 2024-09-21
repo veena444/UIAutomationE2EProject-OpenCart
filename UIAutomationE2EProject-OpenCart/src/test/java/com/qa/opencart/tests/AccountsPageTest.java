@@ -37,6 +37,23 @@ public class AccountsPageTest extends BaseTest{
 	public void accPageHeadersTest() {
 		List<String> actualHeadersList = accountsPage.getAccPageHeaders();
 		Assert.assertEquals(actualHeadersList, AppConstants.EXPECTED_ACC_PAGE_HEADERS_LIST);
-	}	
+	}
+	
+	@DataProvider
+	public Object[][] getSearchKey(){
+		return new Object[][] {
+			{"macbook",3},
+			{"imac",1},
+			{"samsung",2}
+		};
+	}
+	
+	@Test(dataProvider = "getSearchKey")
+	public void searchCountTest(String searchKey, int searchCount) {
+		resultsPage = accountsPage.doSearch(searchKey);
+		Assert.assertEquals(resultsPage.getSearchResultsCount(), searchCount);
+	}
+	
+	
 
 }
