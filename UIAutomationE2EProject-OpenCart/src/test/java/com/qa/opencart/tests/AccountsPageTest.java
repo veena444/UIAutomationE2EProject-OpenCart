@@ -54,6 +54,24 @@ public class AccountsPageTest extends BaseTest{
 		Assert.assertEquals(resultsPage.getSearchResultsCount(), searchCount);
 	}
 	
+	@DataProvider
+	public Object[][] getSearchData(){
+		return new Object[][] {
+			{"macbook","MacBook"},
+			{"macbook","MacBook Air"},
+			{"macbook","MacBook Pro"},
+			{"imac","iMac"},
+			{"samsung","Samsung SyncMaster 941BW"},
+			{"samsung","Samsung Galaxy Tab 10.1"},
+		};
+	}
+	
+	@Test(dataProvider = "getSearchData")
+	public void searchTest(String searchKey, String productName) {
+		resultsPage = accountsPage.doSearch(searchKey);
+		productInfoPage = resultsPage.selectProduct(productName);
+		Assert.assertEquals(productInfoPage.getProductInfoPageHeader(), productName);
+	}
 	
 
 }
