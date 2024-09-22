@@ -17,4 +17,6 @@ public class AppConstants {
 	public static final String USER_REGISTER_SUCCESS_MESSG = "Your Account Has Been Created!";	
 	public static final String REGISTER_PAGE_TITLE = "Register Account";
 
+	public static final String SHOPPING_CART_PAGE_TITLE = "Shopping Cart";
+	public static final int PRODUCT_QTY = 2;
 }

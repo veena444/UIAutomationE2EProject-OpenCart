@@ -32,5 +32,10 @@ public class ResultsPage {
 		return resultCount;
 	}
 	
+	public ProductInfoPage selectProduct(String productName) {
+		eleUtil.doClick(By.linkText(productName)); 
+		return new ProductInfoPage(driver);
+	}
+	
 
 }
