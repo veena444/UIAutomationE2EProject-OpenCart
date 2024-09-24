@@ -13,6 +13,7 @@ import com.qa.opencart.pages.LoginPage;
 import com.qa.opencart.pages.ProductInfoPage;
 import com.qa.opencart.pages.RegisterPage;
 import com.qa.opencart.pages.ResultsPage;
+import com.qa.opencart.pages.ShoppingCartPage;
 
 public class BaseTest {
 	
@@ -26,6 +27,7 @@ public class BaseTest {
 	protected RegisterPage registerPage;
 	protected ResultsPage resultsPage;
 	protected ProductInfoPage productInfoPage;
+	protected ShoppingCartPage shoppingCartPage;
 	
 	@BeforeTest
 	

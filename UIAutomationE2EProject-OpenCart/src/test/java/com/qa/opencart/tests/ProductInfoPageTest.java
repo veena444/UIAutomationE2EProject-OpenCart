@@ -66,11 +66,31 @@ public class ProductInfoPageTest extends BaseTest{
 			{"canon","Canon EOS 5D",3},
 		};
 	}
+	
 	@Test(dataProvider="getProductImagesCountData")
 	public void productImagesCountTest(String searchKey,String productName,int imagesCount) {
 		resultsPage = accountsPage.doSearch(searchKey);
 		productInfoPage = resultsPage.selectProduct(productName);
 		Assert.assertEquals(productInfoPage.getProductImagesCount(), imagesCount);
+	}
+	
+	
+    @DataProvider	
+	public Object[][] getAddToCartData(){
+		return new Object[][]{
+		{"macbook","MacBook Pro"}
+		};
+	}
+	
+	@Test(dataProvider = "getAddToCartData")
+	public void getAddToCartTest(String searchKey,String productName) {
+		resultsPage = accountsPage.doSearch(searchKey);
+		productInfoPage = resultsPage.selectProduct(productName);
+		productInfoPage.updateQuantity();
+		String successMessage = productInfoPage.addProductToCart();
+		System.out.println(successMessage);
+		Assert.assertEquals(successMessage, "Success: You have added " + productName +" to your shopping cart!");
+			
 	}
 
 }

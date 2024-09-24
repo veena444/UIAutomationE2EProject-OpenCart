@@ -38,6 +38,7 @@ public class RegisterPageTest extends BaseTest{
 			
 		};
 	}
+	
 	@Test(dataProvider="getCreateData")
 	public void userRegisterTest(String firstName,String lastName,String Email,String telephone,String password,String subscribe) {
 		Assert.assertTrue(registerPage.userRegistration(firstName, lastName, getRandomEmail(), telephone, password, subscribe));
