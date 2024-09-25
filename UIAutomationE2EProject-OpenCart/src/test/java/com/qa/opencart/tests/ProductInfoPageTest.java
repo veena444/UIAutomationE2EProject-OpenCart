@@ -90,6 +90,8 @@ public class ProductInfoPageTest extends BaseTest{
 		String successMessage = productInfoPage.addProductToCart();
 		System.out.println(successMessage);
 		Assert.assertEquals(successMessage, "Success: You have added " + productName +" to your shopping cart!");
+		
+		shoppingCartPage = productInfoPage.navigateToCartPage();
 			
 	}
 

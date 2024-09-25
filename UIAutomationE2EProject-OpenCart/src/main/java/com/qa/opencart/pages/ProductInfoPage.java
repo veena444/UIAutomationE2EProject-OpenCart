@@ -97,6 +97,9 @@ public class ProductInfoPage {
 
 	}
 
-	
+	public ShoppingCartPage navigateToCartPage() {
+		eleUtil.doClick(shoppingCartLink);
+		return new ShoppingCartPage(driver);
+	}
 
 }
