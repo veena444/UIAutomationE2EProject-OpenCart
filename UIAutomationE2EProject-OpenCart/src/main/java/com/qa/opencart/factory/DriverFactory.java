@@ -21,6 +21,8 @@ public class DriverFactory {
 	WebDriver driver;
 	Properties prop;
 	
+	public static String isHighlight;
+	
 	/**
 	 * This method is used to initialize the driver on the basis of given browser name.
 	 * @param browserName
@@ -30,6 +32,8 @@ public class DriverFactory {
 
 		String browserName = prop.getProperty("browser");  
 		System.out.println("browser name is: "+browserName);
+		
+		isHighlight = prop.getProperty("highlight");
 		
 		switch (browserName.toLowerCase().trim()) {
 		case "chrome":

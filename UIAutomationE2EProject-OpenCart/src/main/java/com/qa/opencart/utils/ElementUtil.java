@@ -21,19 +21,30 @@ import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.qa.opencart.exceptions.FrameworkException;
+import com.qa.opencart.factory.DriverFactory;
 
 public class ElementUtil {
 
 		private WebDriver driver;
 		private Actions action;
+		private JavaScriptUtil jsUtil;
 
 		public ElementUtil(WebDriver driver) {
 			this.driver=driver;
-			action = new Actions(driver); 
+			action = new Actions(driver);
+			jsUtil = new JavaScriptUtil(driver);
+		}
+		
+		private void checkElementHighlight(WebElement element) {
+			if(Boolean.parseBoolean(DriverFactory.isHighlight)) {
+				jsUtil.flash(element);
+			}		
 		}
 		
 		public WebElement getElement(By locator) { 
-			return driver.findElement(locator);
+			WebElement element =  driver.findElement(locator);
+			checkElementHighlight(element);
+			return element;
 		}
 		
 
