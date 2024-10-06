@@ -7,5 +7,9 @@ public class AppLogin {
 	public void getName() {
 		System.out.println("My Name is: "+name);
 	}
+	
+	public void getPlace() {
+		System.out.println("Place: Bengaluru");
+	}
 
 }
