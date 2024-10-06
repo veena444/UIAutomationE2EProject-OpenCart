@@ -2,10 +2,10 @@ package com.qa.opencart.tests;
 
 public class AppLogin {
 	
-	String name ="Veena";
+	String name ="VeenaH";
 	
 	public void getName() {
-		System.out.println("Name is: "+name);
+		System.out.println("My Name is: "+name);
 	}
 
 }
