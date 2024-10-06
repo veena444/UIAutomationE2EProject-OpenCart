@@ -6,6 +6,7 @@ public class AppLogin {
 	
 	public void getName() {
 		System.out.println("My Name is: "+name);
+		double d = 12.33;
 	}
 
 }
