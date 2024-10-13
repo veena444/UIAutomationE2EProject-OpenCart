@@ -32,7 +32,10 @@ public class LoginPageTest extends BaseTest{
 
 	@Test(priority=Integer.MAX_VALUE)
 	public void loginTest() {
-		accountsPage = loginPage.doLogin(prop.getProperty("username"), prop.getProperty("password"));
+		//passing password from command line
+		accountsPage = loginPage.doLogin(prop.getProperty("username"), System.getProperty("password"));
+		
+//		accountsPage = loginPage.doLogin(prop.getProperty("username"), prop.getProperty("password"));
 		Assert.assertEquals(accountsPage.getAccountsPageTitle(), AppConstants.ACCOUNTS_PAGE_TITLE);
 	}
 
