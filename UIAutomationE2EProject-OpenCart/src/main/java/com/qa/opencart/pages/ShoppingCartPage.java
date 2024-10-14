@@ -23,6 +23,11 @@ public class ShoppingCartPage {
 		System.out.println("Shopping cart page title: "+title);
 		return title;
 	}
+		
+	public CheckOutPage navigateToCheckoutPage() {
+		eleUtil.doClick(checkOutBtn);
+		return new CheckOutPage(driver);
+	}
 	
 
 }

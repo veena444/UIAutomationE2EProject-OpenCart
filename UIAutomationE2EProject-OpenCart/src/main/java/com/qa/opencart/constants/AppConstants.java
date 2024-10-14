@@ -19,4 +19,6 @@ public class AppConstants {
 
 	public static final String SHOPPING_CART_PAGE_TITLE = "Shopping Cart";
 	public static final int PRODUCT_QTY = 2;
+	
+	public static final String CHECK_OUT_PAGE_TITLE = "Checkout";
 }

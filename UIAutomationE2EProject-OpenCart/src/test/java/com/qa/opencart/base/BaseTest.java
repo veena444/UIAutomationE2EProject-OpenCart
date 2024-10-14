@@ -10,6 +10,7 @@ import org.testng.asserts.SoftAssert;
 
 import com.qa.opencart.factory.DriverFactory;
 import com.qa.opencart.pages.AccountsPage;
+import com.qa.opencart.pages.CheckOutPage;
 import com.qa.opencart.pages.LoginPage;
 import com.qa.opencart.pages.ProductInfoPage;
 import com.qa.opencart.pages.RegisterPage;
@@ -29,6 +30,7 @@ public class BaseTest {
 	protected ResultsPage resultsPage;
 	protected ProductInfoPage productInfoPage;
 	protected ShoppingCartPage shoppingCartPage;
+	protected CheckOutPage checkOutPage;
 	
 	@Parameters({"browser"}) 
 	@BeforeTest
