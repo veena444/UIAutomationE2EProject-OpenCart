@@ -54,7 +54,7 @@ pipeline
                         jdk: '',
                         properties: [],
                         reportBuildPolicy: 'ALWAYS',
-                        results: [[path: 'UIAutomationE2EProject-OpenCart/allure-results']]
+                        results: [[path: 'allure-results']]
                     ])
                 }
             }
@@ -67,7 +67,7 @@ pipeline
                                   alwaysLinkToLastBuild: false, 
                                   keepAll: true, 
                                   reportDir: 'reports', 
-                                  reportFiles: 'UIAutomationE2EProject-OpenCart/TestExecutionReport.html', 
+                                  reportFiles: 'TestExecutionReport.html', 
                                   reportName: 'HTML Regression Extent Report', 
                                   reportTitles: ''])
             }
@@ -83,7 +83,7 @@ pipeline
             steps {
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
                     git 'https://github.com/veena444/UIAutomationE2EProject-OpenCart'
-                    sh "mvn clean test -Dsurefire.suiteXmlFiles=src/test/resources/testrunners/testng_sanity.xml"
+                    bat "mvn clean test -Dsurefire.suiteXmlFiles=src/test/resources/testrunners/testng_sanity.xml"
                     
                 }
             }
@@ -97,7 +97,7 @@ pipeline
                                   alwaysLinkToLastBuild: false, 
                                   keepAll: true, 
                                   reportDir: 'reports', 
-                                  reportFiles: 'UIAutomationE2EProject-OpenCart/TestExecutionReport.html', 
+                                  reportFiles: 'TestExecutionReport.html', 
                                   reportName: 'HTML Sanity Extent Report', 
                                   reportTitles: ''])
             }
