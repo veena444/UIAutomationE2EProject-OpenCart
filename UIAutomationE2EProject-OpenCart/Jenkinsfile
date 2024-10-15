@@ -66,8 +66,8 @@ pipeline
                      publishHTML([allowMissing: false,
                                   alwaysLinkToLastBuild: false, 
                                   keepAll: true, 
-                                  reportDir: 'reports', 
-                                  reportFiles: 'UIAutomationE2EProject-OpenCart/TestExecutionReport.html', 
+                                  reportDir: 'UIAutomationE2EProject-OpenCart/reports', 
+                                  reportFiles: 'TestExecutionReport.html', 
                                   reportName: 'HTML Regression Extent Report', 
                                   reportTitles: ''])
             }
@@ -96,8 +96,8 @@ pipeline
                      publishHTML([allowMissing: false,
                                   alwaysLinkToLastBuild: false, 
                                   keepAll: true, 
-                                  reportDir: 'reports', 
-                                  reportFiles: 'UIAutomationE2EProject-OpenCart/TestExecutionReport.html', 
+                                  reportDir: 'UIAutomationE2EProject-OpenCart/reports', 
+                                  reportFiles: 'TestExecutionReport.html', 
                                   reportName: 'HTML Sanity Extent Report', 
                                   reportTitles: ''])
             }
