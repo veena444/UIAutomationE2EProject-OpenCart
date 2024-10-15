@@ -4,7 +4,7 @@ This project demonstrates the use of Selenium WebDriver 4.x with Java to automat
 
 Tech Stack:
 
-Eclipse -IDE
+IDE - Eclipse
 
 Language - Java
 
