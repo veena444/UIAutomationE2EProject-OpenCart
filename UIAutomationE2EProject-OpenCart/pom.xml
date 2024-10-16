@@ -34,6 +34,12 @@
 		</dependency>
 
 		<dependency>
+			<groupId>org.apache.maven.surefire</groupId>
+			<artifactId>surefire-testng</artifactId>
+			<version>3.5.0</version>
+		</dependency>
+
+		<dependency>
 			<groupId>org.apache.poi</groupId>
 			<artifactId>poi</artifactId>
 			<version>3.9</version>
@@ -115,7 +121,7 @@
 					<forkCount>3</forkCount>
 					<reuseForks>true</reuseForks>
 					<suiteXmlFiles>
-<!--						<suiteXmlFile>src/test/resources/testRunners/testng_regression.xml</suiteXmlFile>-->							
+						<!--						<suiteXmlFile>src/test/resources/testRunners/testng_regression.xml</suiteXmlFile>-->							
 							<suiteXmlFile>${suiteXmlFile}</suiteXmlFile>
 					</suiteXmlFiles>
 
