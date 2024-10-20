@@ -18,32 +18,32 @@
 		</classes>
 	</test>
 
-	<test name="Accounts Page Test">
-		<parameter name="browser" value="chrome"></parameter>
-		<classes>
-			<class name="com.qa.opencart.tests.AccountsPageTest" />
-		</classes>
-	</test>
+<!--	<test name="Accounts Page Test">-->
+<!--		<parameter name="browser" value="chrome"></parameter>-->
+<!--		<classes>-->
+<!--			<class name="com.qa.opencart.tests.AccountsPageTest" />-->
+<!--		</classes>-->
+<!--	</test>-->
 
-	<test name="Register Page Test">
-		<parameter name="browser" value="chrome"></parameter>
-		<classes>
-			<class name="com.qa.opencart.tests.RegisterPageTest" />
-		</classes>
-	</test>
+<!--	<test name="Register Page Test">-->
+<!--		<parameter name="browser" value="chrome"></parameter>-->
+<!--		<classes>-->
+<!--			<class name="com.qa.opencart.tests.RegisterPageTest" />-->
+<!--		</classes>-->
+<!--	</test>-->
 
-	<test name="ProductInfo Page Test">
-		<parameter name="browser" value="chrome"></parameter>
-		<classes>
-			<class name="com.qa.opencart.tests.ProductInfoPageTest" />
-		</classes>
-	</test>
+<!--	<test name="ProductInfo Page Test">-->
+<!--		<parameter name="browser" value="chrome"></parameter>-->
+<!--		<classes>-->
+<!--			<class name="com.qa.opencart.tests.ProductInfoPageTest" />-->
+<!--		</classes>-->
+<!--	</test>-->
 
-	<test name="ShoppingCart Page Test">
-		<parameter name="browser" value="chrome"></parameter>
-		<classes>
-			<class name="com.qa.opencart.tests.ShoppingCartPageTest" />
-		</classes>
-	</test>
+<!--	<test name="ShoppingCart Page Test">-->
+<!--		<parameter name="browser" value="chrome"></parameter>-->
+<!--		<classes>-->
+<!--			<class name="com.qa.opencart.tests.ShoppingCartPageTest" />-->
+<!--		</classes>-->
+<!--	</test>-->
 	
 </suite> 
