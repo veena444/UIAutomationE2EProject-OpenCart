@@ -32,15 +32,17 @@ public class BaseTest {
 	protected ShoppingCartPage shoppingCartPage;
 	protected CheckOutPage checkOutPage;
 	
-	@Parameters({"browser"}) 
+	@Parameters({"browser","browserversion","testname"}) 
 	@BeforeTest
 	
-	public void setUp(String browserName) { 
+	public void setUp(String browserName, String browserVersion, String testName ) { 
 		df = new DriverFactory();
 		prop = df.initProp();
 		//check if browser parameter is coming from testng.xml
 		if(browserName != null) { 
 			prop.setProperty("browser", browserName);
+			prop.setProperty("browserversion", browserVersion);
+			prop.setProperty("testname", testName);
 		}
 		driver = df.initDriver(prop);		
 		loginPage = new LoginPage(driver); 
