@@ -1,8 +1,12 @@
 package com.qa.opencart.base;
 
+import java.awt.Desktop;
+import java.io.File;
+import java.io.IOException;
 import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
@@ -54,5 +58,40 @@ public class BaseTest {
 	public void tearDown() {
 		driver.quit();
 	}
+	
+	/**
+	 * This method is used to open the Extent & Allure report after the test run in local.
+	 */
+//	@AfterSuite
+//	public void openHtmlReport() {
+//		// extent html report
+//		try {
+//			File htmlFile = new File("reports/TestExecutionReport.html");
+//			if (htmlFile.exists()) {
+//				Desktop.getDesktop().browse(htmlFile.toURI());
+//			} else {
+//				System.out.println("Report file not found: " + htmlFile.getAbsolutePath());
+//			}
+//		} catch (IOException e) {
+//			e.printStackTrace();
+//		}
+//
+//		// allure
+//		try {
+//			// Serve the Allure report
+//			ProcessBuilder builder = new ProcessBuilder("C:\\Users\\aksha\\scoop\\apps\\allure", "serve", "allure-results");
+//			builder.inheritIO();
+//			Process process = builder.start();
+//			process.waitFor();
+//
+//			// The `allure serve` command automatically opens the report in a browser.
+//			System.out.println("Allure report served successfully.");
+//
+//		} catch (IOException | InterruptedException e) {
+//			e.printStackTrace();
+//			System.out.println("Failed to serve Allure report.");
+//		}
+//
+//	}
 
 }

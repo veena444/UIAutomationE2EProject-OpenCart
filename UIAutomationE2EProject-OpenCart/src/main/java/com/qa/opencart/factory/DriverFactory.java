@@ -20,6 +20,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import com.qa.opencart.errors.AppError;
 import com.qa.opencart.exceptions.BrowserException;
 import com.qa.opencart.exceptions.FrameworkException;
+import com.qa.opencart.logger.Log;
 
 public class DriverFactory {
 	
@@ -44,7 +45,8 @@ public class DriverFactory {
 	public WebDriver initDriver(Properties prop) { 
 
 		String browserName = prop.getProperty("browser");  
-		System.out.println("browser name is: "+browserName);
+//		System.out.println("browser name is: "+browserName);
+		Log.info(prop.getProperty("testname") + " and browser name is : " + browserName);
 		
 		isHighlight = prop.getProperty("highlight");
 		
@@ -94,7 +96,8 @@ public class DriverFactory {
 			break;
 
 		default:
-			System.out.println(AppError.INVALID_BROWSER_MESG + browserName + "is invalid");
+//			System.out.println(AppError.INVALID_BROWSER_MESG + browserName + "is invalid");
+			Log.error(AppError.INVALID_BROWSER_MESG + browserName + " is invalid");
 			throw new BrowserException(AppError.INVALID_BROWSER_MESG + browserName);
 
 		}
@@ -112,7 +115,8 @@ public class DriverFactory {
 	
 	
 	private void init_remoteDriver(String browserName) {
-		System.out.println("Running tests on Selenium Grid with browser : "+browserName);
+//		System.out.println("Running tests on Selenium Grid with browser : "+browserName);
+		Log.info("Running tests on Selenium Grid with browser : \"+browserName");
 		try {
 		switch (browserName.toLowerCase().trim()) {
 		case "chrome":			
@@ -126,7 +130,8 @@ public class DriverFactory {
 			break;
 
 		default:
-			System.out.println("Please pass the right remote browser name...");
+//			System.out.println("Please pass the right remote browser name...");
+			Log.info("Please pass the right remote browser name...");
 			throw new BrowserException(AppError.INVALID_BROWSER_MESG + browserName);
 		}
 	 }
@@ -174,10 +179,12 @@ public class DriverFactory {
 		FileInputStream ip = null;
 		
 		String envName = System.getProperty("env");
-		System.out.println("Running tests on env: "+envName);
+//		System.out.println("Running tests on env: "+envName);
+		Log.info("Running tests on env: "+envName);
 		try {
 			if(envName == null) {
-				System.out.println("env is null..hence running tests on QA env");
+//				System.out.println("env is null..hence running tests on QA env");
+				Log.warn("env is null..hence running tests on QA env");
 				ip = new FileInputStream(".\\src\\test\\resources\\config\\qa.config.properties");
 			}
 			else {
@@ -199,7 +206,8 @@ public class DriverFactory {
 					break;
 
 				default:
-					System.out.println("Please pass the right environment: "+envName);
+//					System.out.println("Please pass the right environment: "+envName);
+					Log.error("Please pass the right environment: "+envName);
 					throw new FrameworkException("INVALID ENV NAME");
 				}
 			}
