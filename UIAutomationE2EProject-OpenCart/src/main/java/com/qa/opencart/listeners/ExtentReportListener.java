@@ -18,6 +18,7 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.qa.opencart.factory.DriverFactory;
+import com.qa.opencart.logger.Log;
 
 
 public class ExtentReportListener implements ITestListener {
@@ -62,13 +63,15 @@ public class ExtentReportListener implements ITestListener {
 
 	@Override
 	public synchronized void onStart(ITestContext context) {
-		System.out.println("Test Suite started!");
+//		System.out.println("Test Suite started!");
+		Log.info("Test Suite started!");
 		
 	}
 
 	@Override
 	public synchronized void onFinish(ITestContext context) {
-		System.out.println(("Test Suite is ending!"));
+//		System.out.println(("Test Suite is ending!"));
+		Log.info("Test Suite is ending!");
 		extent.flush();
 		test.remove();
 	}
@@ -81,7 +84,8 @@ public class ExtentReportListener implements ITestListener {
 		int mid = qualifiedName.substring(0, last).lastIndexOf(".");
 		String className = qualifiedName.substring(mid + 1, last);
 
-		System.out.println(methodName + " started!");
+//		System.out.println(methodName + " started!");
+		Log.info(methodName + " started!");
 		ExtentTest extentTest = extent.createTest(result.getMethod().getMethodName(),
 				result.getMethod().getDescription());
 
@@ -97,14 +101,16 @@ public class ExtentReportListener implements ITestListener {
 
 	public synchronized void onTestSuccess(ITestResult result) {
 		String methodName = result.getMethod().getMethodName();
-		System.out.println((methodName + " passed!"));
+//		System.out.println((methodName + " passed!"));
+		Log.info(methodName + " passed!");
 		test.get().pass("Test passed");
 		//test.get().pass(result.getThrowable(), MediaEntityBuilder.createScreenCaptureFromPath(DriverFactory.getScreenshot(methodName), methodName).build());
 		test.get().getModel().setEndTime(getTime(result.getEndMillis()));
 	}
 
 	public synchronized void onTestFailure(ITestResult result) {
-		System.out.println((result.getMethod().getMethodName() + " failed!"));
+//		System.out.println((result.getMethod().getMethodName() + " failed!"));
+		Log.info((result.getMethod().getMethodName() + " failed!"));
 		String methodName = result.getMethod().getMethodName();
 		test.get().fail("Test failed");
 		test.get().fail(result.getThrowable(), MediaEntityBuilder.createScreenCaptureFromPath(DriverFactory.getScreenshot(methodName), methodName).build());
@@ -112,7 +118,8 @@ public class ExtentReportListener implements ITestListener {
 	}
 
 	public synchronized void onTestSkipped(ITestResult result) {
-		System.out.println((result.getMethod().getMethodName() + " skipped!"));
+//		System.out.println((result.getMethod().getMethodName() + " skipped!"));
+		Log.info((result.getMethod().getMethodName() + " skipped!"));
 		String methodName = result.getMethod().getMethodName();
 		test.get().skip("Test skipped");
 //		test.get().skip(result.getThrowable(), MediaEntityBuilder.createScreenCaptureFromPath(DriverFactory.getScreenshot(methodName), methodName).build());
@@ -120,7 +127,8 @@ public class ExtentReportListener implements ITestListener {
 	}
 
 	public synchronized void onTestFailedButWithinSuccessPercentage(ITestResult result) {
-		System.out.println(("onTestFailedButWithinSuccessPercentage for " + result.getMethod().getMethodName()));
+//		System.out.println(("onTestFailedButWithinSuccessPercentage for " + result.getMethod().getMethodName()));
+		Log.info(("onTestFailedButWithinSuccessPercentage for " + result.getMethod().getMethodName()));
 	}
 
 	private Date getTime(long millis) {

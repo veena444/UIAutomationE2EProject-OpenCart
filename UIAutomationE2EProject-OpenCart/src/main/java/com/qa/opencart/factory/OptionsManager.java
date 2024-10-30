@@ -8,6 +8,8 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxOptions;
 
+import com.qa.opencart.logger.Log;
+
 public class OptionsManager {
 	
 	private Properties prop;
@@ -23,7 +25,8 @@ public class OptionsManager {
 		co = new ChromeOptions();
 		if(Boolean.parseBoolean(prop.getProperty("headless"))) 
 				{
-			System.out.println("...Running in headless...");
+//			System.out.println("...Running in headless...");
+			Log.info("...Running in headless...");
 			co.addArguments("--headless");
 			co.addArguments("--window-position=-2400,-2400"); //temporary fix
 		}
@@ -48,7 +51,8 @@ public class OptionsManager {
 	public FirefoxOptions getFirefoxOptions() {
 		fo = new FirefoxOptions();
 		if(Boolean.parseBoolean(prop.getProperty("headless"))) {
-			System.out.println("...Running in headless...");
+//			System.out.println("...Running in headless...");
+			Log.info("...Running in headless...");
 			fo.addArguments("--headless");
 			fo.addArguments("--window-position=-2400,-2400"); //temporary fix
 		}
@@ -71,7 +75,8 @@ public class OptionsManager {
 	public EdgeOptions getEdgeOptions() {
 		eo = new EdgeOptions();
 		if(Boolean.parseBoolean(prop.getProperty("headless"))) {
-			System.out.println("...Running in headless...");
+//			System.out.println("...Running in headless...");
+			Log.info("...Running in headless...");
 			eo.addArguments("--headless");
 			eo.addArguments("--window-position=-2400,-2400"); //temporary fix
 		}
