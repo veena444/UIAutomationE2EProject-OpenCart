@@ -8,6 +8,7 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.qa.opencart.base.BaseTest;
+import com.qa.opencart.logger.Log;
 
 public class ProductInfoPageTest extends BaseTest{
 	
@@ -88,7 +89,8 @@ public class ProductInfoPageTest extends BaseTest{
 		productInfoPage = resultsPage.selectProduct(productName);
 		productInfoPage.updateQuantity();
 		String successMessage = productInfoPage.addProductToCart();
-		System.out.println(successMessage);
+//		System.out.println(successMessage);
+		Log.info(successMessage);
 		Assert.assertEquals(successMessage, "Success: You have added " + productName +" to your shopping cart!");
 		
 		shoppingCartPage = productInfoPage.navigateToCartPage();
