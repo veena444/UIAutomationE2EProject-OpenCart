@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import com.qa.opencart.constants.AppConstants;
+import com.qa.opencart.logger.Log;
 import com.qa.opencart.utils.ElementUtil;
 
 public class LoginPage {
@@ -27,13 +28,15 @@ public class LoginPage {
 
 	public String getLoginPageTitle() {
 		String title = eleUtil.waitForTitleContainsAndReturn(AppConstants.LOGIN_PAGE_TITLE, AppConstants.DEFAULT_SHORT_TIME_OUT);
-		System.out.println("Login page title: "+title);
+//		System.out.println("Login page title: "+title);
+		Log.info("Login page title: "+title);
 		return title;
 	}
 	
 	public String getLoginPageURL() {
 		String url = eleUtil.waitForURLContainsAndReturn(AppConstants.LOGIN_PAGE_FRACTION_URL, AppConstants.DEFAULT_SHORT_TIME_OUT);
 		System.out.println("Login page url: "+url);
+		Log.info("Login page url: "+url);
 		return url;
 	}
 	

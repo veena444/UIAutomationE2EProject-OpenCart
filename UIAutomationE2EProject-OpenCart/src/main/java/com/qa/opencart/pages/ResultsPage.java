@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import com.qa.opencart.constants.AppConstants;
+import com.qa.opencart.logger.Log;
 import com.qa.opencart.utils.ElementUtil;
 
 public class ResultsPage {
@@ -28,7 +29,8 @@ public class ResultsPage {
 	
 	public int getSearchResultsCount() {
 		int resultCount = eleUtil.waitForElementsVisible(results, AppConstants.DEFAULT_MEDIUM_TIME_OUT).size();
-		System.out.println("search result count ===> "+resultCount);
+//		System.out.println("search result count ===> "+resultCount);
+		Log.info("search result count ===> "+resultCount);
 		return resultCount;
 	}
 	

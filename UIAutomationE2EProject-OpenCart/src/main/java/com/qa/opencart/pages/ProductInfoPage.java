@@ -9,6 +9,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import com.qa.opencart.constants.AppConstants;
+import com.qa.opencart.logger.Log;
 import com.qa.opencart.utils.ElementUtil;
 
 public class ProductInfoPage {
@@ -34,7 +35,8 @@ public class ProductInfoPage {
 	
 	public String getProductInfoPageHeader() {
 		String productHeaderValue = eleUtil.waitForElementVisible(productHeader, AppConstants.DEFAULT_SHORT_TIME_OUT).getText();
-		System.out.println("Product Info Page Header ===> "+productHeaderValue);
+//		System.out.println("Product Info Page Header ===> "+productHeaderValue);
+		Log.info("Product Info Page Header ===> "+productHeaderValue);
 		return productHeaderValue;
 	}
 	
@@ -73,13 +75,15 @@ public class ProductInfoPage {
 		productMap.put("productHeader", getProductInfoPageHeader());
 		getProductMetaData();
 		getProductPriceData();
-		System.out.println("Product data: "+productMap);
+//		System.out.println("Product data: "+productMap);
+		Log.info("Product data: "+productMap);
 		return productMap;
 	}
 	
 	public int getProductImagesCount() {
 		int imagesCount = eleUtil.waitForElementsVisible(productImage, AppConstants.DEFAULT_MEDIUM_TIME_OUT).size();
-		System.out.println("Images count ===> "+imagesCount);
+//		System.out.println("Images count ===> "+imagesCount);
+		Log.info("Images count ===> "+imagesCount);
 		return imagesCount;
 	}
 	
@@ -92,7 +96,8 @@ public class ProductInfoPage {
 		eleUtil.doClick(addToCartBtn);
 		String successMessage = eleUtil.waitForElementVisible(successMsg, AppConstants.DEFAULT_SHORT_TIME_OUT).getText();
 		String cartMsg = successMessage.substring(0, successMessage.length() - 1).replace("\n", "");
-		System.out.println(cartMsg);
+//		System.out.println(cartMsg);
+		Log.info(cartMsg);
 		return cartMsg;		
 
 	}

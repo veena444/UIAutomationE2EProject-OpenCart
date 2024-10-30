@@ -8,6 +8,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import com.qa.opencart.constants.AppConstants;
+import com.qa.opencart.logger.Log;
 import com.qa.opencart.utils.ElementUtil;
 
 public class AccountsPage {
@@ -28,7 +29,8 @@ public class AccountsPage {
 	
 	public String getAccountsPageTitle() {
 		String title = eleUtil.waitForTitleContainsAndReturn(AppConstants.ACCOUNTS_PAGE_TITLE, AppConstants.DEFAULT_SHORT_TIME_OUT);
-		System.out.println(title);
+//		System.out.println(title);
+		Log.info(title);
 		return title;
 	}
 	
@@ -51,7 +53,8 @@ public class AccountsPage {
 	}
 	
 	public ResultsPage doSearch(String searchKey) {
-		System.out.println("Search key ===> "+searchKey);
+//		System.out.println("Search key ===> "+searchKey);
+		Log.info("Search key ===> "+searchKey);
 		WebElement searchEle = eleUtil.waitForElementVisible(search, AppConstants.DEFAULT_SHORT_TIME_OUT);
 		eleUtil.doSendKeys(searchEle, searchKey);
 		eleUtil.doClick(searchIcon);

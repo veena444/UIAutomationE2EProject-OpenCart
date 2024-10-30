@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import com.qa.opencart.constants.AppConstants;
+import com.qa.opencart.logger.Log;
 import com.qa.opencart.utils.ElementUtil;
 
 public class ShoppingCartPage {
@@ -20,7 +21,8 @@ public class ShoppingCartPage {
 	
 	public String getShoppingCartPageTitle() {
 		String title = eleUtil.waitForTitleContainsAndReturn(AppConstants.SHOPPING_CART_PAGE_TITLE, AppConstants.DEFAULT_SHORT_TIME_OUT);
-		System.out.println("Shopping cart page title: "+title);
+//		System.out.println("Shopping cart page title: "+title);
+		Log.info("Shopping cart page title: "+title);
 		return title;
 	}
 		

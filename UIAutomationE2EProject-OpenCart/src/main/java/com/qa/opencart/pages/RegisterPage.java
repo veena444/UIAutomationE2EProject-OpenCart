@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import com.qa.opencart.constants.AppConstants;
+import com.qa.opencart.logger.Log;
 import com.qa.opencart.utils.ElementUtil;
 
 public class RegisterPage {
@@ -36,7 +37,8 @@ public class RegisterPage {
 
 	public String getRegisterPageTitle() {
 		String title = eleUtil.waitForTitleContainsAndReturn(AppConstants.REGISTER_PAGE_TITLE, AppConstants.DEFAULT_SHORT_TIME_OUT);
-		System.out.println("Register page title: "+title);
+//		System.out.println("Register page title: "+title);
+		Log.info("Register page title: "+title);
 		return title;
 	}
 	
@@ -60,7 +62,8 @@ public class RegisterPage {
 		
 		
 		String successMsg = eleUtil.waitForElementVisible(successMessage, AppConstants.DEFAULT_MEDIUM_TIME_OUT).getText();
-		System.out.println(successMsg);
+//		System.out.println(successMsg);
+		Log.info(successMsg);
 		
 		if(successMsg.contains(AppConstants.USER_REGISTER_SUCCESS_MESSG)) {
 			eleUtil.doClick(logoutLink);
