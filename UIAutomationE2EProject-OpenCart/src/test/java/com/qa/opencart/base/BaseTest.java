@@ -62,19 +62,19 @@ public class BaseTest {
 	/**
 	 * This method is used to open the Extent & Allure report after the test run in local.
 	 */
-	@AfterSuite
-	public void openHtmlReport() {
-		// extent html report
-		try {
-			File htmlFile = new File("reports/TestExecutionReport.html");
-			if (htmlFile.exists()) {
-				Desktop.getDesktop().browse(htmlFile.toURI());
-			} else {
-				System.out.println("Report file not found: " + htmlFile.getAbsolutePath());
-			}
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+//	@AfterSuite
+//	public void openHtmlReport() {
+//		// extent html report
+//		try {
+//			File htmlFile = new File("reports/TestExecutionReport.html");
+//			if (htmlFile.exists()) {
+//				Desktop.getDesktop().browse(htmlFile.toURI());
+//			} else {
+//				System.out.println("Report file not found: " + htmlFile.getAbsolutePath());
+//			}
+//		} catch (IOException e) {
+//			e.printStackTrace();
+//		}
 
 		// allure
 //		try {
@@ -92,6 +92,6 @@ public class BaseTest {
 //			System.out.println("Failed to serve Allure report.");
 //		}
 //
-	}
+//	}
 
 }
