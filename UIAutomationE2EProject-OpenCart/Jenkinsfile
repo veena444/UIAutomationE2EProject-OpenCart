@@ -5,6 +5,9 @@ pipeline
     tools{
         maven 'maven'
         }
+    environment {
+        SUITE_XML_FILE = 'UIAutomationE2EProject-OpenCart/src/test/resources/testRunners/testng_regression.xml'
+    }
 
     stages 
     {
