@@ -62,24 +62,24 @@ public class BaseTest {
 	/**
 	 * This method is used to open the Extent & Allure report after the test run in local.
 	 */
-//	@AfterSuite
-//	public void openHtmlReport() {
-//		// extent html report
-//		try {
-//			File htmlFile = new File("reports/TestExecutionReport.html");
-//			if (htmlFile.exists()) {
-//				Desktop.getDesktop().browse(htmlFile.toURI());
-//			} else {
-//				System.out.println("Report file not found: " + htmlFile.getAbsolutePath());
-//			}
-//		} catch (IOException e) {
-//			e.printStackTrace();
-//		}
-//
-//		// allure
+	@AfterSuite
+	public void openHtmlReport() {
+		// extent html report
+		try {
+			File htmlFile = new File("reports/TestExecutionReport.html");
+			if (htmlFile.exists()) {
+				Desktop.getDesktop().browse(htmlFile.toURI());
+			} else {
+				System.out.println("Report file not found: " + htmlFile.getAbsolutePath());
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+		// allure
 //		try {
 //			// Serve the Allure report
-//			ProcessBuilder builder = new ProcessBuilder("C:\\Users\\aksha\\scoop\\apps\\allure", "serve", "allure-results");
+//			ProcessBuilder builder = new ProcessBuilder("C:\\Users\\aksha\\scoop\\apps\\allure\\2.30.0\\bin\\allure.bat", "serve", "allure-results");
 //			builder.inheritIO();
 //			Process process = builder.start();
 //			process.waitFor();
@@ -92,6 +92,6 @@ public class BaseTest {
 //			System.out.println("Failed to serve Allure report.");
 //		}
 //
-//	}
+	}
 
 }
