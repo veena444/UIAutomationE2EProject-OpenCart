@@ -39,7 +39,7 @@ pipeline
             steps {
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
                     git 'https://github.com/veena444/UIAutomationE2EProject-OpenCart.git'
-                    bat "mvn clean test -Dsurefire.suiteXmlFiles=UIAutomationE2EProject-OpenCart/src/test/resources/testRunners/testng_regression.xml"
+                    bat "mvn clean test -DsuiteXmlFiles=UIAutomationE2EProject-OpenCart/src/test/resources/testRunners/testng_regression.xml"
                     
                 }
             }
