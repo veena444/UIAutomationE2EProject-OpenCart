@@ -2,6 +2,7 @@ package com.qa.opencart.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 import com.qa.opencart.constants.AppConstants;
 import com.qa.opencart.logger.Log;
@@ -17,6 +18,7 @@ public class LoginPage {
 	private By loginBtn = By.cssSelector("input.btn.btn-primary");
 	private By forgotPwdLink = By.linkText("Forgotten Password");
 	private By logo = By.cssSelector("img.img-responsive");
+	private By loginErrorMessage = By.cssSelector("div.alert.alert-danger.alert-dismissible");
 	
 	private By registerLink = By.linkText("Register");
 	
@@ -54,6 +56,21 @@ public class LoginPage {
 			eleUtil.doClick(loginBtn);			
 			return new AccountsPage(driver);		
 		}
+	
+	public boolean doInvalidLogin(String userName, String pwd) {
+		WebElement usernameElement = eleUtil.waitForElementVisible(username, AppConstants.DEFAULT_MEDIUM_TIME_OUT);
+		eleUtil.doSendKeys(usernameElement, userName);
+		eleUtil.doSendKeys(password, pwd);
+		eleUtil.doClick(loginBtn);
+		String errorMsg = eleUtil.waitForElementVisible(loginErrorMessage, AppConstants.DEFAULT_SHORT_TIME_OUT).getText();
+		Log.info("Login error ===> "+ errorMsg);
+		if(errorMsg.contains(AppConstants.LOGIN_ERROR_MESSAGE)) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
 	
 	public RegisterPage navigateToRegisterPage() {
 		eleUtil.doClick(registerLink);

@@ -103,6 +103,12 @@
 			<version>2.24.1</version>
 		</dependency>
 
+		<dependency>
+			<groupId>com.opencsv</groupId>
+			<artifactId>opencsv</artifactId>
+			<version>5.9</version>
+		</dependency>
+
 	</dependencies>
 
 
@@ -129,7 +135,7 @@
 					<forkCount>3</forkCount>
 					<reuseForks>true</reuseForks>
 					<suiteXmlFiles>
-<!--						<suiteXmlFile>src/test/resources/testRunners/testng_regression.xml</suiteXmlFile>-->
+						<!--						<suiteXmlFile>src/test/resources/testRunners/testng_regression.xml</suiteXmlFile>-->
 							<suiteXmlFile>${suiteXmlFile}</suiteXmlFile>
 					</suiteXmlFiles>
 

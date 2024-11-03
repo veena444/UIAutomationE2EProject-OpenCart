@@ -49,7 +49,9 @@ public class ElementUtil {
 		
 
 		public void doSendKeys(By locator, String value) {
-			getElement(locator).sendKeys(value);
+			WebElement element = getElement(locator);
+			element.clear();
+			element.sendKeys(value);
 		}
 		
 		public void doSendKeys(By locator,String value,int timeOut) {

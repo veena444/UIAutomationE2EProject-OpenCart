@@ -21,4 +21,6 @@ public class AppConstants {
 	public static final int PRODUCT_QTY = 2;
 	
 	public static final String CHECK_OUT_PAGE_TITLE = "Checkout";
+	
+	public static final String LOGIN_ERROR_MESSAGE = "Warning: No match for E-Mail Address and/or Password.";
 }
