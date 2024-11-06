@@ -10,7 +10,9 @@ import org.openqa.selenium.WebElement;
 import com.qa.opencart.constants.AppConstants;
 import com.qa.opencart.logger.Log;
 import com.qa.opencart.utils.ElementUtil;
-
+/**
+ * @author Veena Hegde
+ */
 public class AccountsPage {
 	
 	private WebDriver driver;

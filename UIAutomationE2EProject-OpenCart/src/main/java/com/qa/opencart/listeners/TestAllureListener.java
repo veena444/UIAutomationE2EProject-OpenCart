@@ -11,7 +11,9 @@ import org.testng.ITestResult;
 import com.qa.opencart.factory.DriverFactory;
 import com.qa.opencart.logger.Log;
 
-
+/**
+ * @author Veena Hegde
+ */
 public class TestAllureListener implements ITestListener {
 
 	private static String getTestMethodName(ITestResult iTestResult) {

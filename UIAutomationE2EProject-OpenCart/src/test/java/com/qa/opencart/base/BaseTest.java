@@ -17,7 +17,9 @@ import com.qa.opencart.pages.ProductInfoPage;
 import com.qa.opencart.pages.RegisterPage;
 import com.qa.opencart.pages.ResultsPage;
 import com.qa.opencart.pages.ShoppingCartPage;
-
+/**
+ * @author Veena Hegde
+ */
 public class BaseTest {
 	
 	WebDriver driver;

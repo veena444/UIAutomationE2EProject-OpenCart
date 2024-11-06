@@ -6,7 +6,9 @@ import org.openqa.selenium.WebDriver;
 import com.qa.opencart.constants.AppConstants;
 import com.qa.opencart.logger.Log;
 import com.qa.opencart.utils.ElementUtil;
-
+/**
+ * @author Veena Hegde
+ */
 public class ShoppingCartPage {
 	
 	private WebDriver driver;

@@ -8,7 +8,9 @@ import org.testng.annotations.Test;
 import com.qa.opencart.base.BaseTest;
 import com.qa.opencart.constants.AppConstants;
 import com.qa.opencart.logger.Log;
-
+/**
+ * @author Veena Hegde
+ */
 public class ShoppingCartPageTest extends BaseTest{
 	
 	@BeforeClass

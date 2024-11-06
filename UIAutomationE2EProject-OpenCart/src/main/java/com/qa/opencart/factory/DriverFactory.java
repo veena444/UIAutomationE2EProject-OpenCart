@@ -21,12 +21,12 @@ import com.qa.opencart.errors.AppError;
 import com.qa.opencart.exceptions.BrowserException;
 import com.qa.opencart.exceptions.FrameworkException;
 import com.qa.opencart.logger.Log;
-
+/**
+ * @author Veena Hegde
+ */
 public class DriverFactory {
 	
-	/**
-	 * @author Veena Hegde
-	 */
+
 	WebDriver driver;
 	Properties prop;
 	

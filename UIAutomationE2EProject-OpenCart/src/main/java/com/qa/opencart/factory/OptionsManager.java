@@ -9,7 +9,9 @@ import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxOptions;
 
 import com.qa.opencart.logger.Log;
-
+/**
+ * @author Veena Hegde
+ */
 public class OptionsManager {
 	
 	private Properties prop;
